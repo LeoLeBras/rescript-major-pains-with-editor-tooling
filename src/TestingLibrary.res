@@ -108,16 +108,6 @@ module Screen = {
   @send
   external queryByText: (t, string) => option<Dom.element> = "queryByText"
 
-  /** Find by label or aria-label text content */
-  @return(nullable)
-  @send
-  external queryByLabelText: (t, string) => option<Dom.element> = "queryByLabelText"
-
-  /** Find by input placeholder value */
-  @return(nullable)
-  @send
-  external queryByPlaceholderText: (t, string) => option<Dom.element> = "queryByPlaceholderText"
-
   /** Find by aria role */
   @return(nullable)
   @send

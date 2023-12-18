@@ -4,6 +4,7 @@ let asyncData = Some(AsyncData.NotAsked)
 // asyncData->Option.map({{cursor}})
 // I except the following suggestion:
 // + AsyncData.toBusy
+// + AsyncData.toIlde
 // But the plugin doesn't suggest anything (see 006.png).
 let asyncData = asyncData->Option.map(AsyncData.toBusy)
 

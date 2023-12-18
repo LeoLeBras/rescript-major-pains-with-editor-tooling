@@ -11,7 +11,14 @@ let done = value => Done(value)
 
 let toBusy = value =>
   switch value {
-  | Loading | Reloading(_) => value
-  | NotAsked => Loading
+  | Reloading(_) as reloading => reloading
+  | NotAsked | Loading => Loading
   | Done(done) => Reloading(done)
+  }
+
+let toIdle = value =>
+  switch value {
+  | Reloading(reloading) => Done(reloading)
+  | NotAsked | Loading => NotAsked
+  | Done(_) as done => done
   }

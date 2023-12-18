@@ -38,9 +38,10 @@ module Expect = {
     @send external toHaveValue: (t<Dom.element>, string) => unit = "toHaveValue"
     @send external toHaveTextContent: (t<Dom.element>, string) => unit = "toHaveTextContent"
     @send external toBeInTheDocument: t<Dom.element> => unit = "toBeInTheDocument"
-    @send external toHaveAttribute: (t<'a>, string) => unit = "toHaveAttribute"
-    @send external toHaveAttributeValue: (t<'a>, string, 'value) => unit = "toHaveAttribute"
-    @send external toHaveDisplayValue: (t<'a>, string) => unit = "toHaveDisplayValue"
+    @send external toHaveAttribute: (t<Dom.element>, string) => unit = "toHaveAttribute"
+    @send
+    external toHaveAttributeValue: (t<Dom.element>, string, 'value) => unit = "toHaveAttribute"
+    @send external toHaveDisplayValue: (t<Dom.element>, string) => unit = "toHaveDisplayValue"
   }
 }
 

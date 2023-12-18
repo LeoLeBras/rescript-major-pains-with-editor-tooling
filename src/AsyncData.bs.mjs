@@ -25,11 +25,7 @@ function done(value) {
 
 function toBusy(value) {
   if (typeof value === "number") {
-    if (value === /* NotAsked */0) {
-      return /* Loading */1;
-    } else {
-      return value;
-    }
+    return /* Loading */1;
   } else if (value.TAG === /* Reloading */0) {
     return value;
   } else {
@@ -40,11 +36,25 @@ function toBusy(value) {
   }
 }
 
+function toIdle(value) {
+  if (typeof value === "number") {
+    return /* NotAsked */0;
+  } else if (value.TAG === /* Reloading */0) {
+    return {
+            TAG: /* Done */1,
+            _0: value._0
+          };
+  } else {
+    return value;
+  }
+}
+
 export {
   notAsked ,
   loading ,
   reloading ,
   done ,
   toBusy ,
+  toIdle ,
 }
 /* No side effect */

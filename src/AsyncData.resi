@@ -6,3 +6,4 @@ let reloading: 'a => t<'a>
 let done: 'a => t<'a>
 
 let toBusy: t<'a> => t<'a>
+let toIdle: t<'a> => t<'a>
