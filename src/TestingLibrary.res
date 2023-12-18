@@ -1,3 +1,7 @@
+// NOTE — Please note that testing libray deps are not installed.
+// Executing this code will create a runtime error.
+// > https://testing-library.com/docs/react-testing-library/intro/
+
 module Screen = {
   type t
 
@@ -98,7 +102,6 @@ module Screen = {
     expanded?: bool,
     value?: roleValueOption,
   }
-  type withTextOptions = {selector?: string}
 
   /** Find by element text content */
   @return(nullable)
@@ -124,10 +127,6 @@ module Screen = {
   @return(nullable)
   @send
   external queryByRoleWithOptions: (t, role, withRoleOptions) => option<Dom.element> = "queryByRole"
-
-  @send external debug: t => unit = "debug"
-  @send external debugElement: (t, Dom.element) => unit = "debug"
-  @send external debugElementWithPrintLimit: (t, Dom.element, int) => unit = "debug"
 }
 
 @module("@testing-library/react") @val external screen: Screen.t = "screen"
